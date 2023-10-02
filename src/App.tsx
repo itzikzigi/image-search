@@ -6,7 +6,7 @@ import { Form } from "react-bootstrap";
 import fetchIMages from "./utils/fetch";
 
 const App = () => {
-  const searchInput = useRef(null);
+  const searchInput = useRef(<input />);
   const [images, setImages] = useState();
   const [totalPages, setTotalPages] = useState();
 
