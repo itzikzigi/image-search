@@ -9,7 +9,7 @@ const SearchForm = () => {
   const [totalPages, setTotalPages] = useState();
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    fetchIMages((searchInput as HTMLInputElement).current.value)
+    fetchIMages(searchInput.current.value)
       .then((data) => {
         setImages(data.results);
         setTotalPages(data.total_pages);

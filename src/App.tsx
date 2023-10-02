@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import "./App.css";
 // import SearchForm from "./Components/Form";
 // import Filters from "./Components/Filters";
@@ -6,24 +6,25 @@ import { Form } from "react-bootstrap";
 import fetchIMages from "./utils/fetch";
 
 const App = () => {
-  const searchInput = useRef(<input />);
+  const searchInput = useRef<HTMLInputElement | null>(null);
   const [images, setImages] = useState();
   const [totalPages, setTotalPages] = useState();
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    fetchIMages(searchInput.current.value)
+    fetchIMages((searchInput.current as HTMLInputElement).value)
       .then((data) => {
         setImages(data.results);
         setTotalPages(data.total_pages);
         console.log(images);
       })
       .catch((error) => console.log(error));
-    console.log(searchInput.current.value);
+    console.log((searchInput.current as HTMLInputElement).value);
+    console.log(totalPages);
   };
 
   const handleSelection = (selection: string) => {
-    searchInput.current.value = selection;
+    (searchInput.current as HTMLInputElement).value = selection;
   };
   return (
     <div className="container">
