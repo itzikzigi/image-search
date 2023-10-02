@@ -4,10 +4,10 @@ import "./App.css";
 // import Filters from "./Components/Filters";
 import { Form } from "react-bootstrap";
 import fetchIMages from "./utils/fetch";
-
+type images = { id: string; urls: { small: string }; alt_description: string };
 const App = () => {
   const searchInput = useRef<HTMLInputElement | null>(null);
-  const [images, setImages] = useState();
+  const [images, setImages] = useState<images[]>();
   const [totalPages, setTotalPages] = useState();
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
@@ -47,7 +47,7 @@ const App = () => {
       </div>
       <div className="images">
         {images &&
-          images.map((image) => {
+          images.map((image: images) => {
             return (
               <img
                 key={image.id}
