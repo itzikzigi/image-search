@@ -13,8 +13,6 @@ const SearchForm = () => {
   const [page, setPage] = useState(0);
 
   useEffect(() => {
-    console.log(page);
-
     fetchIMages((searchInput.current as HTMLInputElement).value, page).then(
       (data) => setImages(data.results)
     );

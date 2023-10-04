@@ -10,7 +10,6 @@ const fetchIMages = async (inputValue: string, page: number) => {
     const { data } = await axios.get(
       `${apiURL}?query=${inputValue}&page=${page}&per_page=${maxImagesPerPage}&client_id=${key}`
     );
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
