@@ -2,9 +2,9 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { Form } from "react-bootstrap";
 import Filters from "./Filters";
 import fetchIMages from "../utils/fetch";
-import Images from "../Components/Images";
+import Images from "./Images";
 import { images } from "../types";
-import PageButton from "../Components/PageButton";
+import PageButton from "./PageButton";
 
 const SearchForm = () => {
   const searchInput = useRef<HTMLInputElement | null>(null);
