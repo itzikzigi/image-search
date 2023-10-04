@@ -5,6 +5,7 @@ import fetchIMages from "../utils/fetch";
 import Images from "./Images";
 import { images } from "../types";
 import PageButton from "./PageButton";
+import React from "react";
 
 const SearchForm = () => {
   const searchInput = useRef<HTMLInputElement | null>(null);
