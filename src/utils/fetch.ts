@@ -5,10 +5,10 @@ const key = "Ksy1s7IlgZp4qTRlIN1EOD0Jb-0IholZq_FuNc8Pgo0";
 const apiURL = "https://api.unsplash.com/search/photos";
 const maxImagesPerPage = 20;
 
-const fetchIMages = async (inputValue: string) => {
+const fetchIMages = async (inputValue: string, page: number) => {
   try {
     const { data } = await axios.get(
-      `${apiURL}?query=${inputValue}&page=1&per_page=${maxImagesPerPage}&client_id=${key}`
+      `${apiURL}?query=${inputValue}&page=${page}&per_page=${maxImagesPerPage}&client_id=${key}`
     );
     console.log(data);
     return data;
