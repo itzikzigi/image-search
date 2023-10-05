@@ -1,3 +1,5 @@
+import React from "react";
+
 type current = { value: string };
 const Filters = ({ current }: { current: current | HTMLInputElement }) => {
   const handleSelection = (selection: string) => {
